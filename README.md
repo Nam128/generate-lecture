@@ -6,7 +6,15 @@
 
 ```
 /generate-lecture Lecture_4_graph.pdf 4 graph
+                  ──────────────────── ─ ─────
+                  PDF 파일명            │ 토픽명 → Lecture_4_graph.md
+                                       └ 강의 번호 → lec4_page_01.webp
 ```
+
+예를 들어 위 명령어는:
+- `Lecture_4_graph.pdf` — 변환할 원본 PDF 파일
+- `4` — 강의 번호. 이미지 파일명에 사용됨 (`lec4_page_01.webp`, `lec4_page_02.webp`, ...)
+- `graph` — 토픽명. 출력 파일명에 사용됨 (`Lecture_4_graph.md`)
 
 이 명령어 하나로 Claude가 다음을 수행합니다:
 
