@@ -1,4 +1,4 @@
-# generate-lecture
+# lecture-pdf-to-korean-md
 
 강의 PDF 슬라이드를 한국어 번역 마크다운으로 변환하는 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) slash command입니다. [Obsidian](https://obsidian.md/) 노트 테이킹에 최적화되어 있습니다.
 
@@ -46,14 +46,14 @@
 # 프로젝트 루트에서 실행
 mkdir -p .claude/commands
 curl -o .claude/commands/generate-lecture.md \
-  https://raw.githubusercontent.com/Nam128/generate-lecture/main/generate-lecture.md
+  https://raw.githubusercontent.com/Nam128/lecture-pdf-to-korean-md/main/generate-lecture.md
 ```
 
 ### 방법 2: Clone 후 심볼릭 링크
 
 ```bash
-git clone https://github.com/Nam128/generate-lecture.git ~/.claude-skills/generate-lecture
-ln -s ~/.claude-skills/generate-lecture/generate-lecture.md \
+git clone https://github.com/Nam128/lecture-pdf-to-korean-md.git ~/.claude-skills/lecture-pdf-to-korean-md
+ln -s ~/.claude-skills/lecture-pdf-to-korean-md/generate-lecture.md \
   /path/to/your/project/.claude/commands/generate-lecture.md
 ```
 
