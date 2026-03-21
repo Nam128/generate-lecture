@@ -5,16 +5,17 @@
 ## 기능
 
 ```
-/generate-lecture Lecture_4_graph.pdf 4 graph
-                  ──────────────────── ─ ─────
-                  PDF 파일명            │ 토픽명 → Lecture_4_graph.md
-                                       └ 강의 번호 → lec4_page_01.webp
+/generate-lecture Lecture_4_graph.pdf
+                  ────────────────────
+                  PDF 파일명 → BASENAME: Lecture_4_graph
+                               ├─ 마크다운: Lecture_4_graph.md
+                               └─ 이미지:   Lecture_4_graph_page_01.webp
 ```
 
-예를 들어 위 명령어는:
-- `Lecture_4_graph.pdf` — 변환할 원본 PDF 파일
-- `4` — 강의 번호. 이미지 파일명에 사용됨 (`lec4_page_01.webp`, `lec4_page_02.webp`, ...)
-- `graph` — 토픽명. 출력 파일명에 사용됨 (`Lecture_4_graph.md`)
+PDF 파일명 하나만 입력하면 확장자를 제거한 `BASENAME`을 자동 추출하여 모든 명명에 사용합니다:
+- `Lecture_4_graph.pdf` → BASENAME = `Lecture_4_graph`
+- 출력 마크다운: `Lecture_4_graph.md`
+- 이미지 파일명: `Lecture_4_graph_page_01.webp`, `Lecture_4_graph_page_02.webp`, ...
 
 이 명령어 하나로 Claude가 다음을 수행합니다:
 
@@ -28,7 +29,7 @@
 
 ```markdown
 ## Page 1
-![Page 1](images/lec4_page_01.webp)
+![Page 1](images/Lecture_4_graph_page_01.webp)
 
 **그래프 탐색(Graph Traversal)**
 
@@ -111,16 +112,14 @@ claude  # Claude Code 실행
 
 그다음 입력:
 ```
-/generate-lecture Lecture_4_graph.pdf 4 graph
+/generate-lecture Lecture_4_graph.pdf
 ```
 
 **인자 설명:**
 
-| 순서 | 이름 | 예시 | 설명 |
-|------|------|------|------|
-| 1 | `pdf-filename` | `Lecture_4_graph.pdf` | `algorithm/materials/eng/` 안의 PDF 파일명 |
-| 2 | `lecture-num` | `4` | 강의 번호 (이미지 파일명에 사용) |
-| 3 | `topic` | `graph` | 토픽명 (출력 파일명에 사용) |
+| 이름 | 예시 | 설명 |
+|------|------|------|
+| `pdf-filename` | `Lecture_4_graph.pdf` | `algorithm/materials/eng/` 안의 PDF 파일명. 확장자를 제거한 BASENAME이 출력 파일명과 이미지 파일명에 사용됨 |
 
 ## 번역 규칙
 
